@@ -1,0 +1,25 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Pack template
+        run: dotnet pack GentilPedro.Templates.ApiDdd.csproj -c Release -o ./nupkg -p:PackageVersion=1.0.${{ github.run_number }}
+
+      - name: Publish to GitHub Packages
+        run: dotnet nuget push "./nupkg/*.nupkg" --source "https://nuget.pkg.github.com/gentilpedro/index.json" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate

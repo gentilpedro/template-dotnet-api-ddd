@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Gentil Pedro",
+  "classifications": [ "Web", "WebAPI", "DDD", "C#" ],
+  "identity": "GentilPedro.Templates.ApiDdd",
+  "name": "Gentil Pedro - API DDD (.NET 10)",
+  "shortName": "api-ddd",
+  "sourceName": "DddApiTemplate",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}

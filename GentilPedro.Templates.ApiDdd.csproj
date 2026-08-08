@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <PackageType>Template</PackageType>
+    <PackageId>GentilPedro.Templates.ApiDdd</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Title>Gentil Pedro - API DDD Template (.NET 10)</Title>
+    <Authors>Gentil Pedro</Authors>
+    <Description>Template dotnet new de Web API .NET 10 com arquitetura DDD tática: Domain rico (agregados, Value Objects, eventos de domínio), Application com CQRS leve, Infrastructure com EF Core + Npgsql, JWT, AutoMapper, FluentValidation, Serilog e Scalar já configurados.</Description>
+    <PackageTags>dotnet-new;templates;webapi;ddd;net10</PackageTags>
+    <RepositoryUrl>https://github.com/gentilpedro/template-dotnet-api-ddd</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/gentilpedro/template-dotnet-api-ddd</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <NoWarn>NU5128</NoWarn>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**;content\**\node_modules\**;content\**\logs\**" />
+    <Compile Remove="**\*.cs" />
+  </ItemGroup>
+
+</Project>
