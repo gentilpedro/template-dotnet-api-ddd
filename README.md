@@ -9,27 +9,29 @@ Template `dotnet new` de Web API .NET 10 com arquitetura **DDD tática**.
 - **Infrastructure**: EF Core + Npgsql, implementação dos repositórios, autenticação JWT + BCrypt.
 - **API**: Controllers, middleware de tratamento de exceção, logging com Serilog (console + arquivo), documentação OpenAPI via Scalar.
 
-## Instalar
+## Como criar um projeto novo
 
-Este pacote é publicado no GitHub Packages (feed NuGet privado da conta `gentilpedro`). Configure a fonte uma vez:
+**1. Configure o GitHub Packages como fonte NuGet** (uma vez só, nesta máquina — precisa de um token seu com escopo `read:packages`):
 
 ```bash
 dotnet nuget add source https://nuget.pkg.github.com/gentilpedro/index.json -n github-gentilpedro -u gentilpedro -p <SEU_TOKEN_COM_read:packages> --store-password-in-clear-text
 ```
 
-Depois instale o template:
+**2. Instale o template:**
 
 ```bash
 dotnet new install GentilPedro.Templates.ApiDdd
 ```
 
-## Usar
+**3. Crie o projeto:**
 
 ```bash
 dotnet new api-ddd -n MeuApp
 ```
 
-## Atualizar
+Configure a connection string do Postgres e o segredo do JWT em `appsettings.json`/`appsettings.Development.json` antes de rodar.
+
+### Atualizar para a versão mais nova
 
 ```bash
 dotnet new update
