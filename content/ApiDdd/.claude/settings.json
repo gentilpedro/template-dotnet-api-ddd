@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "gentilpedro-skills": {
+      "source": {
+        "source": "github",
+        "repo": "gentilpedro/claude-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "gentilpedro@gentilpedro-skills": true
+  }
+}
